@@ -6,6 +6,10 @@ const day = "day" + ((args && parseInt(args[0])) || 1);
 const file = "part" + ((args && parseInt(args[1])|| 1) + ".js")
 const mod_path = ".\\" + day + "\\" + file;
 
+console.log(`day ${day}`);
+console.log(`file ${file}`);
+console.log(`mod_path ${mod_path}`);
+
 watch(
   __dirname + "\\" + day,
   { recursive: true },
@@ -13,6 +17,7 @@ watch(
     delete require.cache[require.resolve(mod_path)];
 
     const process = (filename) => {
+
       let input;
       try {
         input = fs
